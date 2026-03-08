@@ -50,4 +50,27 @@ button {
 .remove-btn {
   background: red;
   padding: 5px 10px;
+
+}
+
+.product img{
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+.product{
+  transition:0.3s;
+}
+
+.product:hover{
+  transform:scale(1.05);
+}
+
+button{
+  background:#0077ff;
+  border-radius:5px;
+}
+
+button:hover{
+  background:#0056cc;
 }
