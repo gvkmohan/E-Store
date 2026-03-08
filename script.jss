@@ -24,6 +24,13 @@ function displayProducts() {
   });
 }
 
+div.innerHTML = `
+  <img src="${product.image}" width="150">
+  <h3>${product.name}</h3>
+  <p>₹${product.price}</p>
+  <button onclick="addToCart(${product.id})">Add to Cart</button>
+`;
+
 function addToCart(id) {
   const product = products.find(p => p.id === id);
   cart.push(product);
@@ -63,3 +70,4 @@ function removeItem(index) {
 
 
 displayProducts();
+
