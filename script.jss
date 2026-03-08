@@ -71,3 +71,31 @@ function removeItem(index) {
 
 displayProducts();
 
+document.getElementById("search").addEventListener("input", function(){
+  const value = this.value.toLowerCase();
+
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(value)
+  );
+
+  displayFilteredProducts(filtered);
+});
+
+function displayFilteredProducts(list){
+  const container = document.getElementById("products");
+  container.innerHTML="";
+
+  list.forEach(product=>{
+    const div=document.createElement("div");
+    div.classList.add("product");
+
+    div.innerHTML=`
+      <img src="${product.image}" width="150">
+      <h3>${product.name}</h3>
+      <p>₹${product.price}</p>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
+    `;
+
+    container.appendChild(div);
+  });
+}
